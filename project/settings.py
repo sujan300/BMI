@@ -129,6 +129,11 @@ STATICFILES_DIRS = ['project/static']
 
 MEDIA_URL   = '/media/'
 
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://hemant-to-do.herokuapp.com'
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
