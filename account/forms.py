@@ -45,3 +45,18 @@ class SignUpForm(forms.ModelForm):
         if password != confirm_password:
             raise forms.ValidationError("password does not match !")
         return 
+
+class UserProfileUpdateForm(SignUpForm):
+    password1 = None
+    password2 = None
+
+    class Meta:
+        model = Account
+        fields = ['first_name','last_name','email',"age"]
+
+        widgets     = {
+            'first_name':forms.TextInput(attrs={'placeholder':'First Name','class':'form-control-s'}),
+            'last_name':forms.TextInput(attrs={'class':'form-control-s','placeholder':'Last Name'}),
+            'email':forms.EmailInput(attrs={'class':'form-control-s','placeholder':'Enter Email','type':'hidden'}),
+            'age':forms.TextInput(attrs={'class':'form-control-s','placeholder':'Enter your Age'})
+        }

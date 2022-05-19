@@ -8,14 +8,14 @@
             <i class="fas fa-bars"></i>
         </label>
         <ul>
-            <li><a href="{% url 'bmi' %}">Home</a></li>
+            <li><a href="{% url 'bmi' %}" style="text-decoration: none;">Home</a></li>
             {% if request.user.is_authenticated %}
-                <li><a href="{% url 'show-data' %}">Save Data</a></li>
-                <li><a href="{% url 'profile' %}">Profile</a></li>
-                <li><a  href="{% url 'logout' %}"><span class="logout">LogOut</span> </a></li>
+                <li><a href="{% url 'show-data' %}" style="text-decoration: none;">Save Data</a></li>
+                <li><a href="{% url 'profile' %}" style="text-decoration: none;">Profile</a></li>
+                <li><a  href="{% url 'logout' %}" style="text-decoration: none;"><span class="logout">LogOut</span> </a></li>
             {% else %}
-                <li><a href="{% url 'login' %}">LogIn</a></li>
-                <li><a href="{% url 'signup' %}">Register</a></li>
+                <li><a href="{% url 'login' %}" style="text-decoration: none;">LogIn</a></li>
+                <li><a href="{% url 'signup' %}"style="text-decoration: none;">Register</a></li>
             {% endif %}
                 
         </ul>

@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
-from account.forms  import SignUpForm
+from account.forms  import SignUpForm,UserProfileUpdateForm
 from sendemailverification.send_email import send_custom_mail
 from . models import Account,OtpEmail
 
@@ -24,7 +24,6 @@ import random
 
 
 def logout_view(request):
-    print(request.user,"*********************login user **********************")
     logout(request)
     return redirect("login")
 
@@ -113,7 +112,6 @@ def forgot_password_view(request):
     if request.method == "POST":
         email = request.POST.get("email")
         if Account.objects.filter(email__exact=email).exists():
-            print("yes account exists")
             user = Account.objects.get(email=email)
             token = default_token_generator.make_token(user)
             request.session['user_id']=user.pk
@@ -176,3 +174,13 @@ def resetpassword_view(request):
 
 def profile_view(request):
     return render(request, "bmi-template/profile.html")
+
+def account_edit_view(request):
+    if request.method == "POST":
+        form = UserProfileUpdateForm(request.POST or None , instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect("profile")
+    else:
+        form = UserProfileUpdateForm(instance=request.user)
+    return render(request, "accounts/profile-update.html",{'form':form})
