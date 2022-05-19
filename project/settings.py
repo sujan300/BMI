@@ -131,7 +131,7 @@ MEDIA_URL   = '/media/'
 
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://hemant-to-do.herokuapp.com'
+    'https://bmi-web-django.herokuapp.com/'
 ]
 
 # Default primary key field type
