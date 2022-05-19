@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+
+
+
+    {% if data %}
+
+    <div class="saved-bmi-wrapper" style="margin-bottom: 150px;">
+        <h1 class="heading-bmi-saved">Your Saved Data</h1>
+
+        <div style="margin-top: 30px;">
+            {% include 'includes/alert.html' %}
+        </div>
+        
+        {% for data_of_bmi in data %}
+            <div class="container container-background" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                <div class="information-wrapper" id="info">
+                    <div class="user-body-detail">
+                        <p>Date {{data_of_bmi.date}}</p>
+                        <p>Height {{data_of_bmi.height}}ft</p>
+                        <p>Weight {{data_of_bmi.weight}}kg</p>
+                        <p>age {{data_of_bmi.user.age}}years</p>
+                        <p>full name {{data_of_bmi.user.full_name}}</p>
+                    </div>
+                    <div class="resul-bmi">
+                        <p>BMI <span class="result">{{data_of_bmi.result}}</span></p>
+                        <p>Status <span class="status"> {{data_of_bmi.status}}</span></p>
+                    </div>
+                </div>
+                <div class="suggestions">
+                    <p>{{data_of_bmi.suggest}}</p>
+                </div>
+                <!-- <button class="send-btn btn">email</button> -->
+                <!-- <button class="btn btn-danger">Delete</button> -->
+                <a href="{% url 'send-bmi-email' data_of_bmi.id %}" class="send-btn btn">Send</a>
+                <a href="{% url 'bmi-delete' data_of_bmi.id %}" class="btn btn-danger">Delete</a>
+                
+            </div>
+        {% endfor %}
+            
+    </div>
+    <script>
+        const informationWrapper=document.querySelectorAll(".information-wrapper");
+        console.log(informationWrapper.length);
+        for(let i=0;i<informationWrapper.length;i++){
+            const status = document.querySelectorAll(".status")[i];
+            if(status.textContent===" Underweight"){
+                status.style.color="red";
+            }else if(status.textContent===" Healthy"){
+                status.style.color="green";
+            }else if(status.textContent===" Overweight"){
+                status.style.color="yellow";
+                status.style.backgroundColor="gray";
+            }else{
+                status.style.color="blue";
+            }
+
+        }
+    </script>
+    {% else %}
+        <div class="saved-bmi-wrapper" style="margin-bottom: 150px;">
+            <h1 class="heading-bmi-saved">No Saved Data</h1>
+        </div>
+    {% endif %}
+{% endblock main %}

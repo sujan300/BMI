@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main %}
+    <div class="profile-container" style="margin-bottom: 150px;">
+        <div class="profile-picture">
+            <img src="{% static 'img/profile.png' %}" alt="">
+        </div>
+        <div class="profile-info">
+            <p> <span class="info-items">Full name</span> : {{request.user.full_name}}</p>
+            <p><span class="info-items">Email</span>: {{request.user.email}}</p>
+            <p> <span class="info-items">Age</span>: {{request.user.age}}years</p>
+            <ul class="social-links">
+                <li><i class="fa-brands fa-facebook"></i></li>
+                <li><i class="fa-brands fa-youtube"></i></li>
+                <li><i class="fa-brands fa-instagram"></i></li>
+            </ul>
+            <div>
+                <button>Edit</button>
+            </div>
+        </div>
+    </div>
+{% endblock main %}
+    

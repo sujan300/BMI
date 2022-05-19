@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    /* height: 100vh; */
+    /* background: #e1edf9; */
+    background: url("https://digitshack.com/codepen/bmical/bg.png");
+  }
+
+.wrapper{
+    height: 100vh;
+    /* background: #e1edf9; */
+    /* background: url("https://digitshack.com/codepen/bmical/bg.png"); */
+    max-width: 450px;
+    width: 100%;
+    margin: 150px auto 0;
+    padding: 10px;
+}
+
+
+.wrapper .form-container{
+    border: 0.2px solid rgb(219, 214, 214);
+    /* background: rgb(251, 251, 251); */
+    background: white;
+    padding: 30px;
+    border-radius: 35px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0,0.15);
+}
+
+.heading{
+    text-align: center;
+    padding: 19px;
+    font-weight: 600;
+    font-size: 25px;
+    padding: 10px;
+}
+
+
+.form-control-s{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 5px;
+    font-size: medium;
+}
+
+.form-control-s input{
+    padding: 7px 5px;
+    font-size: medium;
+    border-radius: 5px;
+    border: 0.1px solid rgb(219, 214, 214);
+}
+
+.forgotpassword{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.forgotpassword a{
+    text-decoration: none;
+    color: black;
+}
+
+.signup_link{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.signup_link a{
+    text-decoration:  none;
+}
+
+.form-control .submit-btn{
+    padding: 11px 7px;
+    font-size: medium;
+    background-color:#4f7df9;
+    border: none;
+    color: #fff;
+}
+
+.errorlist li{
+    list-style: none;
+    color: red;
+     
+}

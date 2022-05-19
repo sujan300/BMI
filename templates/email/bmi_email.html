@@ -1,0 +1,42 @@
+
+
+
+
+{% autoescape off %}
+  <div style=" margin-top: 150px; margin-left: auto; margin-right: auto;">
+      <h1 style="font-weight: 700; text-align: center;">Your Saved Data</h1>
+      <div  style="background: #fff; padding: 50px; border-radius: 22px; margin-bottom: 20px; max-width: 800px;">
+          <div style="display: flex; justify-content: space-between;">
+              <div class="user-body-detail">
+                  <p>Date {{data.date}}</p>
+                  <p>Height {{data.height}}ft</p>
+                  <p>Weight {{data.weight}}kg</p>
+                  <p>age {{data.age}}years</p>
+              </div>
+              <div class="resul-bmi">
+                  <p>BMI {{data.result}}</p>
+                  <p>Status <span class="status"> {{data.status}}</span></p>
+              </div>
+          </div>
+          <div class="suggestions">
+                <p>{{data.suggest}}</p>
+          </div>
+          
+      </div>  
+  </div>
+
+  <script>
+        const status = document.querySelector(".status");
+        if(status.textContent===" Underweight"){
+            status.style.color="red";
+        }else if(status.textContent===" Healthy"){
+            status.style.color="green";
+        }else if(status.textContent===" Overweight"){
+            status.style.color="yellow";
+            status.style.backgroundColor="gray";
+        }else{
+            status.style.color="blue";
+        }
+</script>
+    
+{% endautoescape %}

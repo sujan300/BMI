@@ -1,0 +1,380 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background: url("https://digitshack.com/codepen/bmical/bg.png");
+}
+
+/* #############   navigation bar styling   ############# */
+nav{
+    height: 80px;
+    /* background: rgb(39, 37, 49); */
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 50px 0px 100px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+
+  #click{
+      display: none;
+  }
+
+nav .logo{
+    font-size:  32px;
+    color: black;
+    font-weight: 700;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 15px;
+}
+
+nav ul li{
+    list-style: none;
+    margin: 0 5px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+
+.menu-btn{
+    color: #000;
+    font-size: 25px;
+    display: none;
+}
+
+
+
+.logout{
+    margin: 15px;
+    background: red;
+    color: white;
+    border-radius: 4px;
+    padding:  5px 22px;
+}
+
+
+/* ################section styling ################### */
+.bmi-wrapper{
+    /* border: 1px solid black; */
+    max-width: 850px;
+    width: auto;
+    margin: 90px auto 0;
+    padding: 10px;
+}
+
+.bmi-wrapper .bmi-form-container{
+    background: white;
+    padding: 30px;
+    border-radius: 35px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0,0.15);
+    border: 0.2px solid rgb(219, 214, 214);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+.bmi-wrapper .bmi-form-container .form{
+    /* max-width: 50%;
+    width: 100%; */
+    flex: 1 1 425px;
+}
+
+.bmi-wrapper .bmi-form-container .form .form-control{
+    padding: 10px;
+    margin: 10px;
+    font-size: medium;
+}
+
+.form .bmi-heading{
+    padding: 10px;
+    margin: 10px;
+    font-weight: 500;
+    font-size: medium;
+    text-align: center;
+}
+
+.form .calculate-btn{
+    background-color:#4f7df9;
+    color: white;
+    cursor: pointer;
+}
+
+
+ .bmi-result{
+    text-align: center;
+    width: 100%;
+}
+
+.bmi-result .text-bmi{
+    margin: 25px;
+    padding: 10px;
+    display: block;
+    font-weight: 800;
+    font-size: larger;
+}
+
+
+.bmi-result h4 {
+    margin: 20px;
+}
+
+.bmi-result h4 .bmi{
+    background: rgb(212, 211, 208);
+    padding: 25px;
+    border-radius: 20px;
+    color: #4f7df9;
+    font-size: 20px;
+}
+
+.form-control-bmi input{
+    padding: 15px 7px;
+    font-size: larger;
+    border-radius: 5px;
+    border: 0.1px solid rgb(219, 214, 214);
+    width: 100%;
+    text-align: center;
+    margin: 5px;
+}
+
+.bmi-wrapper .bmi-form-container .bmi-guide{
+    display: block;
+}
+
+
+
+.bmi-guide{
+    margin: 10px;
+    padding: 10px;
+}
+
+
+.information-guide{
+    padding: 10px;
+    margin: 10px;
+}
+
+.bmi-guide h3{
+    font-size: 22px;
+}
+
+.information-guide p{
+    font-size: 18px;
+    text-align: justify;
+}
+
+.status p{
+    display: inline;
+    margin: 25px;
+    padding: 25px;
+    color: green;
+    font-weight: 600;
+}
+
+.information-buttons{
+    margin: 15px;
+    padding: 10px;
+}
+
+.information-buttons .btn{
+    padding: 10px 25px;
+    font-size: medium;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+
+.send-btn{
+    background-color: #4f7df9;
+}
+
+.save-btn{
+    background-color: rgb(86, 149, 86);
+}
+
+
+footer{
+    background:rgb(47, 47, 47);
+    color: white;
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+
+
+
+/* ########### responsive navbar ############# */
+
+
+@media (max-width:940px) {
+    nav ul{
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        height: 100vh;
+        width: 60%;
+        display: block;
+        text-align: center;
+        background: white;
+        transition: all ease-in-out 0.5s;
+        z-index: 999;
+    }
+
+    nav ul li{
+        margin: 40px 0;
+    }
+    nav ul li a{
+        font-size: 20px;
+        display: block;
+    }
+    .menu-btn{
+        display: block;
+    }
+    #click:checked ~ ul{
+        right: 0%;
+    }
+}
+
+
+
+
+/* ########## saved data table############# */
+
+
+
+/* ######### profile page design ######## */
+
+.profile-container{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-top: 250px;
+    max-width: 800px;
+    min-width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+
+
+.profile-picture{
+    margin: auto;
+    padding: 50px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    /* border: 1px solid red; */
+}
+
+.profile-picture img{
+    max-height: 250px;
+    max-width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.social-links{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    list-style: none;
+}
+
+.social-links  li{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.profile-info{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 50px;
+    margin: auto;
+}
+
+
+
+.profile-info p{
+    margin-bottom:16px;
+}
+
+.profile-info button{
+    
+    padding: 5px 22px;
+    margin-top: 10px;
+    background: #4f7df9;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+}
+
+.info-items{
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+
+.saved-bmi-wrapper{
+    margin-top: 150px;
+    /* max-width: 60%; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heading-bmi-saved{
+    /* border: 1px solid black; */
+    font-weight: 700;
+    text-align: center;
+}
+
+.information-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.container-background{
+    background: #fff;
+    padding: 50px;
+    border-radius: 22px;
+    margin-bottom: 20px;
+}

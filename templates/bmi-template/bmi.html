@@ -1,0 +1,74 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main %}
+
+<section>
+    <div class="bmi-wrapper" style="margin-bottom: 150px;">
+        <div class="bmi-form-container">
+            <form action="" class="form child" method="post">
+                {% csrf_token %}
+                <div class="bmi-heading">
+                    <h1>Calculate BMI</h1>
+                </div>
+
+                <div class="form-control-bmi">
+                    {% include 'includes/alert.html' %}
+                </div>
+                <div class="form-control-bmi">
+                    <input name="height" type="number" step="0.01" class="text-field" placeholder="Height (ft)" required>
+                </div>
+                <div class="form-control-bmi">
+                    <input name="weight" type="number" step="0.01" class="text-field" placeholder="weight (kg)" required>
+                </div>
+                <div class="form-control-bmi">
+                    <input type="submit" class="calculate-btn" value="Calculate">
+                </div>
+
+                <div class="form-control-bmi bmi-result">
+                    <span class="text-bmi">Your BMI is</span>
+                    {% if result %}
+                    <h4><span class="bmi">{{result}}</span></h4>
+                    {% else %}
+                    <h4><span class="bmi">00.00</span></h4>
+                    {% endif %}
+                    <h4 class="text-bmi">Weight Status is:</h4>
+                    <div class="status">
+                        <p style="color: {{color_status}};">{{info.status_suggestion}}</p>
+                    </div>
+                </div>
+            </form>
+            <div class="bmi-guide child">
+                <div class="information-guide">
+                    <h3 style="color: ;">Suggestions</h3>
+                    <p>{{info.suggest_message}}</p>
+                </div>
+                {% if request.user.is_authenticated %}
+                    {% if save_btn  %}
+
+                    <div class="information-buttons">
+                        <a href="{% url 'save' %}" class="save-btn btn"> Save</a>
+                    </div>
+
+                    {% else %}
+                        <div class="information-buttons">
+                            please calculate your bmi to save and send email ..
+                        </div>
+                    {% endif %}
+
+
+                {% else %}
+                    <div class="information-buttons">
+                        if want to email and save your data you have to <a href="{% url 'signup' %}">sign up </a> sign up first and <a href="{% url 'login' %}">login </a> 
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+    
+{% endblock main %}
+    

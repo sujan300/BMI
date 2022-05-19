@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+<div class="wrapper">
+    <div class="form-container">
+        <form  class="form" method="POST">
+            <div class="heading">
+                Login Form
+            </div>
+            {% csrf_token %}
+            <div class="form-control-s">
+                {% include 'includes/alert.html' %}
+            </div>
+            <div class="form-control-s">
+                <input type="email" placeholder="Email" name="email" required>
+            </div>
+
+            <div class="form-control-s">
+                <input type="password" placeholder="password" name="password" required>
+            </div> 
+
+            <div class="form-control-s forgotpassword">
+                <a href="{% url 'forgetpassword' %}">forgot password ?</a> 
+            </div>  
+            <div class="form-control-s">
+                <input type="submit" class="submit-btn" value="Login">
+            </div>   
+            <div class="form-control-s signup_link">
+                <span> Not Register <a href="{% url 'signup' %}"> SignUp</a></span>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock main %}
+    

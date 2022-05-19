@@ -1,0 +1,22 @@
+
+
+
+    <nav class="sticky">
+        <div class="logo"><a href="{% url 'bmi' %}" style="text-decoration: none; color: black;">BMI</a></div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="{% url 'bmi' %}">Home</a></li>
+            {% if request.user.is_authenticated %}
+                <li><a href="{% url 'show-data' %}">Save Data</a></li>
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                <li><a  href="{% url 'logout' %}"><span class="logout">LogOut</span> </a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">LogIn</a></li>
+                <li><a href="{% url 'signup' %}">Register</a></li>
+            {% endif %}
+                
+        </ul>
+    </nav>

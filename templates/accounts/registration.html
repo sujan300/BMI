@@ -1,0 +1,51 @@
+
+
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="wrapper">
+    <div class="form-container">
+        <form class="form" method="POST">
+            {% csrf_token %}
+            <div class="heading">
+                Registration Form
+            </div>
+            <div class="form-control-s">
+                {% include 'includes/alert.html' %}
+            </div>
+            <div class="form-control-s">
+                {{form.first_name}}
+            </div>
+            <div class="form-control-s">
+                {{form.last_name}}
+            </div>
+            <div class="form-control-s">
+                {{form.age}}
+            </div>
+            <div class="form-control-s">
+                {{form.email}}
+            </div>
+
+            <div class="form-control-s">
+                {{form.password1}}
+            </div>
+
+            <div class="form-control-s">
+                {{form.password2}}
+            </div>
+
+            <div class="form-control-s">
+                {{form.errors}}
+            </div>
+
+            <div class="form-control-s">
+                <input type="submit" class="submit-btn" value="Register">
+            </div>   
+            <div class="form-control-s signup_link">
+                <span>If already Register <a href="{% url 'login' %}"> Login</a></span>
+            </div>
+        </form>
+    </div>
+</div> 
+{% endblock main %}
+    

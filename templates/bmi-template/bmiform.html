@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/bmitemplate/BMI/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="sticky">
+        <div class="logo">BMI</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Save Data</a></li>
+            <li><a href="">Profile</a></li>
+            <li><a href="/bmitemplate/authentication/login.html">LogIn</a></li>
+            <li><a href="/bmitemplate/authentication/index.html">Register</a></li>
+            <li><a  href=""><span class="logout">LogOut</span> </a></li>
+        </ul>
+    </nav>
+    <section>
+        <div class="bmi-wrapper">
+            <div class="bmi-form-container">
+                <form action="" class="form child">
+                    <div class="bmi-heading">
+                        <h1>Calculate BMI</h1>
+                    </div>
+                    <div class="form-control">
+                        <input type="number" class="text-field" placeholder="Height (ft)">
+                    </div>
+                    <div class="form-control">
+                        <input type="number" class="text-field" placeholder="weight (kg)">
+                    </div>
+                    <div class="form-control">
+                        <input type="submit" class="calculate-btn" value="Calculate">
+                    </div>
+    
+                    <div class="form-control bmi-result">
+                        <span class="text-bmi">Your BMI is</span>
+                        <h4><span class="bmi">00.00</span></h4>
+                        <h4 class="text-bmi">Weight Status is:</h4>
+                        <div class="status">
+                            <p>GOOD</p>
+                        </div>
+                    </div>
+                </form>
+                <div class="bmi-guide child">
+                    <div class="information-guide">
+                        <h3>Suggestions</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates fuga commodi provident laborum sunt ratione..</p>
+                    </div>
+                    <div class="information-buttons">
+                        <button class="send-btn btn">send email</button>
+                        <button class="save-btn btn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>@all rights  reserve of 2022</p>
+    </footer>
+</body>
+</html>
