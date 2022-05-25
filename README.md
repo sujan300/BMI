@@ -82,7 +82,8 @@ Start the server
 
 ## Features
 
-- We can save Our Bmi
+- It can save Our Bmi
 - Send Email on Our register email
 - Full Authentication of Django
-- Cross platform
+- BMI calculation
+- Give Suggestion etc ..
