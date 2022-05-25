@@ -130,7 +130,6 @@ def forgot_password_view(request):
 def forgotpassword_validate_view(request,token):
     if request.method == "POST":
         otp_submit = request.POST.get('otp').strip(" ")
-        
         try:
             user = Account.objects.get(pk=request.session["user_id"])
             otp = OtpEmail.objects.filter(user=user).last()
