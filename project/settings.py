@@ -21,12 +21,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ["SECRET_KEY"]
+SECRET_KEY = 'django-insecure-m(=qc0w-!bi4x&r$m#x&vidnf0)#sq5yx1glfgm6$%$1te@k41'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["bmi-web-django.herokuapp.com","localhost"]
+
+# "bmi-web-django.herokuapp.com","localhost"
+
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -143,6 +146,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_HOST          = 'smtp.gmail.com'
 EMAIL_PORT          = 587
-EMAIL_HOST_USER     = os.environ["EMAIL_HOST_USER"]
-EMAIL_HOST_PASSWORD = os.environ["EMAIL_HOST_PASSWORD"]
+EMAIL_HOST_USER     = 'Your Email'
+EMAIL_HOST_PASSWORD = "Your Email Password"
 EMAIL_USE_TLS       = True
